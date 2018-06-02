@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 
+//https://www.hackingwithswift.com/read/4/2/creating-a-simple-browser-with-wkwebview
 class ViewController: UIViewController, WKNavigationDelegate {
  var webView: WKWebView!
     
@@ -21,6 +22,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let url = URL(string: "https://www.hackingwithswift.com")!
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
     }
 
     override func didReceiveMemoryWarning() {
